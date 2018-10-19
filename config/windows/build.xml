@@ -165,6 +165,20 @@ EXPORTS
             </link>
         </build>
 
+        <!-- BULLET -->
+        <build module="bullet" simple="true" if:true="${binding.bullet}">
+            <link>
+                <fileset dir="${lib}/${platform}/${build.arch}/">
+                    <include name="Bullet*.lib"/>
+                    <include name="LinearMath.lib"/>
+                </fileset>
+            </link>
+            <linkargs>
+                <arg value="winmm.lib"/>
+                <arg value="ws2_32.lib"/>
+            </linkargs>
+        </build>
+
         <!-- LIBDIVIDE -->
         <build_simple module="libdivide"/>
 
