@@ -179,6 +179,25 @@
             </link>
         </build>
 
+        <!-- BULLET -->
+        <build module="bullet" simple="true" linker="g++" if:true="${binding.bullet}">
+            <link>
+                <arg value="-ldl"/>
+                <arg value="-L${lib}/${platform}/${build.arch}/bullet"/>
+                <!-- Order is important -->
+                <arg value="-lBulletWorldImporter"/>
+                <arg value="-lBulletSoftBody"/>
+                <arg value="-lBulletDynamics"/>
+                <arg value="-lBulletCollision"/>
+                <arg value="-lBulletFileLoader"/>
+                <arg value="-lBulletInverseDynamics"/>
+                <arg value="-lBulletInverseDynamicsUtils"/>
+                <arg value="-lBullet3Common"/>
+                <arg value="-lLinearMath"/>
+                <arg value="-lBulletRobotics"/>
+            </link>
+        </build>
+
         <!-- LIBDIVIDE -->
         <build_simple module="libdivide"/>
 
